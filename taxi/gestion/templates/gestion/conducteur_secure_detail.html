@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails du Conducteur (Agents)</title>
+</head>
+<body>
+    <h1>{{ conducteur.nom }} {{ conducteur.prenoms }}</h1>
+    <p><strong>Numéro d'identification:</strong> {{ conducteur.numero_identification }}</p>
+    <p><strong>Numéro d'assurance:</strong> {{ conducteur.numero_assurance }} ({{ conducteur.type_assurance }})</p>
+    <p><strong>Numéro de droit taxi:</strong> {{ conducteur.numero_droit_taxi }}</p>
+    <p><strong>Adresse:</strong> {{ conducteur.adresse }}</p>
+    <p><strong>Téléphone:</strong> {{ conducteur.telephone }}</p>
+    <img src="{{ conducteur.photo.url }}" alt="Photo du conducteur">
+
+    <h2>Moto associée</h2>
+    <p><strong>Marque:</strong> {{ conducteur.moto.marque }}</p>
+    <p><strong>Modèle:</strong> {{ conducteur.moto.modele }}</p>
+    <p><strong>Immatriculation:</strong> {{ conducteur.moto.immatriculation }}</p>
+
+    <h2>QR Code</h2>
+    <img src="{{ conducteur.qr_code.url }}" alt="QR Code du conducteur">
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails du Conducteur</title>
+</head>
+<body>
+    <h1>{{ conducteur.nom }} {{ conducteur.prenoms }}</h1>
+    <p><strong>Adresse:</strong> {{ conducteur.adresse }}</p>
+    <p><strong>Téléphone:</strong> {{ conducteur.telephone }}</p>
+    <img src="{{ conducteur.photo.url }}" alt="Photo du conducteur">
+
+    <h2>QR Code</h2>
+    {% if conducteur.qr_code %}
+        <img src="{{ conducteur.qr_code.url }}" alt="QR Code du conducteur">
+        <p>Scannez ce QR Code pour voir les informations.</p>
+    {% else %}
+        <p>QR Code non disponible.</p>
+    {% endif %}
+</body>
+</html>

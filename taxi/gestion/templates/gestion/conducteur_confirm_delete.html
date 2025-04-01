@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Supprimer Conducteur</title>
+</head>
+<body>
+    <h1>Supprimer {{ conducteur.nom }} {{ conducteur.prenoms }}</h1>
+    <p>Es-tu sûr de vouloir supprimer ce conducteur ?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Oui, Supprimer</button>
+    </form>
+    <a href="{% url 'dashboard' %}">Annuler</a>
+</body>
+</html>
+

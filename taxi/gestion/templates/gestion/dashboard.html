@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Tableau de bord du Gestionnaire</h1>
+    <h2>Conducteurs</h2>
+    <ul>
+        {% for conducteur in conducteurs %}
+            <li>
+                {{ conducteur.nom }} {{ conducteur.prenoms }} 
+                (<a href="{% url 'conducteur_detail' conducteur.id %}">Voir détails</a>)
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Agents de contrôle</h2>
+    <ul>
+        {% for agent in agents %}
+            <li>{{ agent.user.username }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'conducteur_create' %}">Ajouter un Conducteur</a> |
+    <a href="{% url 'agent_create' %}">Ajouter un Agent</a>
+</body>
+</html>
